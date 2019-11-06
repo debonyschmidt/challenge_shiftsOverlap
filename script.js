@@ -23,20 +23,20 @@ submit.addEventListener("click", function () {
 
   function checkRoster1() {
     return objRoster1.employee == employeeId && 
-      objRoster1.starttime <= startTime && 
-      objRoster1.endtime >= startTime ||
+      objRoster1.starttime >= startTime && 
+      objRoster1.starttime <= endTime ||
       objRoster1.employee == employeeId && 
-      objRoster1.starttime <= endTime && 
-      objRoster1.endtime >= endTime
+      startTime >= objRoster1.starttime && 
+      startTime <= objRoster1.endtime
   };
 
   function checkRoster2() {
     return objRoster2.employee == employeeId && 
-      objRoster2.starttime <= startTime && 
-      objRoster2.endtime >= startTime ||
+      objRoster2.starttime >= startTime && 
+      objRoster2.starttime <= endTime ||
       objRoster2.employee == employeeId && 
-      objRoster2.starttime <= endTime && 
-      objRoster2.endtime >= endTime
+      startTime >= objRoster2.starttime && 
+      startTime <= objRoster2.endtime
   }
 
   if (employeeId == "" || startTime == "" || endTime == "") {
